@@ -1,0 +1,32 @@
+type Num = int | float
+
+fn describe(n: Num): string {
+    if n is int {
+        val i = n as int
+        "integer: $i"
+    } else {
+        val f = n as float
+        "float: $f"
+    }
+}
+
+val a: Num = 42
+val b: Num = 3.14
+println(describe(a))
+println(describe(b))
+
+// unit as optional value
+fn findPositive(x: int): int | unit {
+    if x > 0 { x }
+}
+
+val found = findPositive(5)
+val missing = findPositive(-3)
+
+if found is int {
+    val v = found as int
+    println("found: $v")
+}
+if missing is unit {
+    println("not found")
+}

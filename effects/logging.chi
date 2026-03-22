@@ -1,0 +1,19 @@
+package user/effects
+
+pub effect log(message: string): unit
+
+fn compute(): int {
+    handle {
+        log("starting")
+        val x = 10
+        log("computed $x")
+        x * 2
+    } with {
+        log(msg) -> {
+            println("LOG: $msg")
+            resume(unit)
+        }
+    }
+}
+
+println(compute())

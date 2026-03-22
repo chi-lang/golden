@@ -1,0 +1,21 @@
+val double = { x: int -> x * 2 }
+val add = { a: int, b: int -> a + b }
+val isEven = { n: int -> n % 2 == 0 }
+
+println(double(5))
+println(add(3, 7))
+println(isEven(4))
+println(isEven(7))
+
+// lambda stored in variable
+val ops = [
+    { x: int -> x + 1 },
+    { x: int -> x * 2 },
+    { x: int -> x - 3 }
+]
+
+var n = 10
+for op in ops {
+    n = op(n)
+}
+println(n)

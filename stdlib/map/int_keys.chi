@@ -1,0 +1,21 @@
+import std/lang.map { emptyMap, put, get, getOrDefault, size, forEach }
+
+val m = emptyMap[int, int]()
+m.put(1, 100)
+m.put(2, 200)
+m.put(3, 300)
+
+println(m.size())
+println(m.get(1))
+println(m.get(2))
+println(m.get(3))
+println(m.getOrDefault(99, -1))
+
+// update existing key
+m.put(1, 999)
+println(m.get(1))
+
+// count via forEach
+var total = 0
+m.forEach { k, v -> total = total + v }
+println(total)

@@ -1,0 +1,13 @@
+import std/io.file { readString, readAllLines, lineIterator }
+
+val content = readString("../golden/stdlib/io/testdata.txt")
+println(content)
+
+val lines = readAllLines("../golden/stdlib/io/testdata.txt")
+println(lines[1])
+println(lines[2])
+println(lines[3])
+
+for line in lineIterator("../golden/stdlib/io/testdata.txt") {
+    println(line)
+}

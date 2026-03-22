@@ -1,0 +1,25 @@
+import std/lang.string { isNotEmpty, isBlank, split, hashCode }
+
+println("hello".isNotEmpty())
+println("".isNotEmpty())
+
+println("  ".isBlank())
+println(" \t ".isBlank())
+println("x".isBlank())
+println("".isBlank())
+
+val parts = "a,b,c".split(",")
+println(parts[1])
+println(parts[2])
+println(parts[3])
+
+val parts2 = "one::two::three".split("::")
+println(parts2[1])
+println(parts2[2])
+println(parts2[3])
+
+val h1 = "hello".hashCode()
+val h2 = "hello".hashCode()
+val h3 = "world".hashCode()
+println(h1 == h2)
+println(h1 == h3)

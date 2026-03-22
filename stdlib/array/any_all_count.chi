@@ -1,0 +1,18 @@
+import std/lang.array { any, all, count, indexOf }
+
+val nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+println(nums.any { x -> x > 9 })
+println(nums.any { x -> x > 10 })
+
+println(nums.all { x -> x > 0 })
+println(nums.all { x -> x > 5 })
+
+println(nums.count { x -> x % 2 == 0 })
+println(nums.count { x -> x > 7 })
+
+val idx = nums.indexOf { x -> x == 5 }
+println(idx.valueOr(-1))
+
+val missing = nums.indexOf { x -> x == 99 }
+println(missing.valueOr(-1))

@@ -1,0 +1,21 @@
+import std/lang.set { emptySet, add, remove, contains, size }
+
+val s = emptySet[int]()
+
+println(s.size())
+println(s.contains(1))
+
+s.add(1)
+s.add(2)
+s.add(3)
+s.add(2)
+s.add(1)
+
+println(s.size())
+println(s.contains(1))
+println(s.contains(2))
+println(s.contains(99))
+
+s.remove(2)
+println(s.contains(2))
+println(s.size())

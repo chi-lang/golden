@@ -1,0 +1,7 @@
+println("tab:\there")
+println("newline:\nhere")
+println("backslash: \\")
+println("quote: \"hello\"")
+println("it's a test")
+println("path\\to\\file")
+println("col1\tcol2")

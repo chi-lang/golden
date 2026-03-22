@@ -1,0 +1,28 @@
+// Recursion via var pattern (Chi doesn't support direct fn self-call)
+var factorial: (int) -> int = { n -> n }
+factorial = { n: int ->
+    if n <= 1 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+var fib: (int) -> int = { n -> n }
+fib = { n: int ->
+    if n <= 1 {
+        n
+    } else {
+        fib(n - 1) + fib(n - 2)
+    }
+}
+
+println(factorial(0))
+println(factorial(1))
+println(factorial(5))
+println(factorial(10))
+
+println(fib(0))
+println(fib(1))
+println(fib(8))
+println(fib(10))

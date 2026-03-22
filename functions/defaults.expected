@@ -1,0 +1,2 @@
+println(repeatStr("ab"))
+        ^ Expected type is 'int' but got 'string' at 19:8

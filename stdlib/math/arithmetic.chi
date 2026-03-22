@@ -1,0 +1,18 @@
+import std/math { abs, min, max, pow }
+
+println(abs(-42))
+println(abs(42))
+println(abs(0))
+
+println(min(3, 7))
+println(min(7, 3))
+println(min(5, 5))
+
+println(max(3, 7))
+println(max(7, 3))
+println(max(5, 5))
+
+println(pow(2, 0))
+println(pow(2, 1))
+println(pow(2, 10))
+println(pow(3, 4))

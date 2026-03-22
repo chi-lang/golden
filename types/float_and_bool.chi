@@ -1,0 +1,38 @@
+// Float literals and arithmetic
+val a: float = 1.5
+val b: float = 2.5
+println(a + b)
+println(a * b)
+println(b - a)
+
+// Division
+val x: float = 10.0
+val y: float = 4.0
+println(x / y)
+
+// Float comparisons
+println(1.5 < 2.5)
+println(2.5 > 1.5)
+println(1.5 == 1.5)
+println(1.5 != 2.5)
+
+// Cast int to float
+val n = 42
+val f = n as float
+println(f)
+
+// Bool literals and logic operators
+val t = true
+val ff = false
+println(t && t)
+println(t && ff)
+println(ff || t)
+println(ff || ff)
+println(!t)
+println(!ff)
+
+// Bool in function return
+fn isPositive(x: int): bool { x > 0 }
+println(isPositive(5))
+println(isPositive(0))
+println(isPositive(-3))

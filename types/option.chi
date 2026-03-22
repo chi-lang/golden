@@ -1,0 +1,16 @@
+import std/lang.option { Option, valueOr, ifPresent, orElse }
+
+val a: Option[int] = 42
+val b: Option[int] = unit
+
+println(a.valueOr(-1))
+println(b.valueOr(-1))
+
+a.ifPresent { x: int -> println("Present: $x") }
+b.ifPresent { x: int -> println("Present: $x") }
+
+// orElse
+val c: Option[int] = unit
+val d: Option[int] = 10
+println(c.orElse(d).valueOr(-1))
+println(a.orElse(d).valueOr(-1))

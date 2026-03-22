@@ -1,0 +1,5 @@
+LOG: outer start
+LOG: inner start
+LOG: inner end
+LOG: outer end
+inner_first+inner_second

@@ -1,0 +1,17 @@
+fn add(a: int, b: int): int {
+    a + b
+}
+
+fn max(a: int, b: int): int {
+    if a > b { a } else { b }
+}
+
+fn abs(n: int): int {
+    if n < 0 { 0 - n } else { n }
+}
+
+println(add(3, 4))
+println(max(10, 7))
+println(max(3, 8))
+println(abs(-5))
+println(abs(5))

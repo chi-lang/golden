@@ -1,0 +1,16 @@
+import std/lang.set { fromArray, contains, size, toArray }
+import std/lang.array { sort }
+
+val s = fromArray([10, 20, 30, 20, 10, 40])
+println(s.size())
+println(s.contains(10))
+println(s.contains(20))
+println(s.contains(99))
+
+// toArray and sort to get deterministic output
+val arr = s.toArray()
+arr.sort()
+println(arr[1])
+println(arr[2])
+println(arr[3])
+println(arr[4])

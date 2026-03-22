@@ -1,0 +1,17 @@
+val p = { x: 10, y: 20 }
+println(p.x)
+println(p.y)
+p.x = 99
+println(p.x)
+
+val nested = { inner: { a: 1, b: 2 }, name: "test" }
+println(nested.inner.a)
+println(nested.inner.b)
+println(nested.name)
+
+// record as function argument
+fn area(r: { width: int, height: int }): int {
+    r.width * r.height
+}
+val rect = { width: 5, height: 3 }
+println(area(rect))

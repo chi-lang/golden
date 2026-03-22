@@ -1,0 +1,28 @@
+import std/lang.array { size, push, pop, insertAt, removeAt, addLast, removeLast, first, last, isEmpty }
+
+val arr = [1, 2, 3]
+println(arr.size())
+println(arr.first().valueOr(-1))
+println(arr.last().valueOr(-1))
+println(arr.isEmpty())
+
+arr.push(4)
+arr.push(5)
+println(arr.size())
+println(arr[4])
+println(arr[5])
+
+val popped = arr.pop()
+println(popped)
+println(arr.size())
+
+arr.insertAt(1, 99)
+println(arr[1])
+println(arr[2])
+
+val removed = arr.removeAt(1)
+println(removed)
+println(arr[1])
+
+val empty = []
+println(empty.isEmpty())

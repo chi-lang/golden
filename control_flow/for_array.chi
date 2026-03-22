@@ -1,0 +1,20 @@
+// for over array
+var sum = 0
+for x in [1, 2, 3, 4, 5] {
+    sum = sum + x
+}
+println(sum)
+
+// for over string array
+for word in ["hello", "world", "chi"] {
+    println(word)
+}
+
+// nested for
+var result = 0
+for a in [1, 2, 3] {
+    for b in [10, 20] {
+        result = result + a * b
+    }
+}
+println(result)

@@ -1,0 +1,8 @@
+val a = "Hello"
+val b = ", "
+val c = "World!"
+println(a + b + c)
+val empty = ""
+println(empty + "test")
+println("test" + empty)
+println("" + "")

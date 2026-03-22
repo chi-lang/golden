@@ -1,0 +1,18 @@
+import std/lang.string { len, codePoints }
+
+val accented = "café"
+println(accented)
+println(accented.len())
+
+val cjk = "你好"
+println(cjk)
+println(cjk.len())
+for cp in cjk.codePoints() {
+    println(cp)
+}
+
+val emoji = "hi🎉"
+println(emoji.len())
+for cp in emoji.codePoints() {
+    println(cp)
+}

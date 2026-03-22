@@ -1,0 +1,29 @@
+// closure over outer variable
+fn makeCounter(start: int): () -> int {
+    var count = start
+    {
+        count = count + 1
+        count
+    }
+}
+
+val c1 = makeCounter(0)
+val c2 = makeCounter(10)
+
+println(c1())
+println(c1())
+println(c1())
+println(c2())
+println(c2())
+
+// closure captures mutable state
+fn makeAdder(n: int): (int) -> int {
+    { x: int -> x + n }
+}
+
+val add5 = makeAdder(5)
+val add100 = makeAdder(100)
+
+println(add5(3))
+println(add100(3))
+println(add5(add100(1)))

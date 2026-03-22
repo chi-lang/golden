@@ -1,0 +1,50 @@
+// Early return - use var+flag pattern (direct return from loop limited by Q7)
+fn firstPositive(arr: array[int]): int {
+    var result = -1
+    var done = false
+    for x in arr {
+        if x > 0 && !done {
+            result = x
+            done = true
+        }
+    }
+    result
+}
+
+println(firstPositive([-3, -1, 5, 2, -4]))
+println(firstPositive([-1, -2, -3]))
+println(firstPositive([7, 3, 1]))
+
+// Multiple early return paths
+fn classify(n: int): string {
+    if n < 0 {
+        return "negative"
+    }
+    if n == 0 {
+        return "zero"
+    }
+    if n > 100 {
+        return "large"
+    }
+    "normal"
+}
+
+println(classify(-5))
+println(classify(0))
+println(classify(50))
+println(classify(200))
+
+// Return value cuts loop short
+fn sumUntil(arr: array[int], limit: int): int {
+    var total = 0
+    for x in arr {
+        if total + x > limit {
+            return total
+        }
+        total = total + x
+    }
+    total
+}
+
+println(sumUntil([1, 2, 3, 4, 5], 10))
+println(sumUntil([1, 2, 3, 4, 5], 100))

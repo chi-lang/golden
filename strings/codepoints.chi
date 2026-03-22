@@ -1,0 +1,12 @@
+import std/lang.string { codePointAt, codePoints, isDigit, isWhitespace }
+
+val s = "abc"
+for cp in s.codePoints() {
+    println(cp)
+}
+
+println("A".codePointAt(1))
+println("5".codePointAt(1).isDigit())
+println("a".codePointAt(1).isDigit())
+println(" ".codePointAt(1).isWhitespace())
+println("x".codePointAt(1).isWhitespace())

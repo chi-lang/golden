@@ -1,0 +1,16 @@
+var i = 0
+var sum = 0
+while i < 5 {
+    i = i + 1
+    sum = sum + i
+}
+println(sum)
+
+// while with condition update
+var n = 256
+var steps = 0
+while n > 1 {
+    n = n / 2
+    steps = steps + 1
+}
+println(steps)

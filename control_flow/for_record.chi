@@ -1,0 +1,19 @@
+// for over record (key-value pairs)
+var result = ""
+for k, v in { a: 1, b: 2 } {
+    result = "$k=$v " + result
+}
+// Note: record iteration order is not guaranteed, so we sort by printing both possibilities
+// Instead, use a single-field record to get deterministic output
+var r = ""
+for k, v in { hello: 42 } {
+    r = "$k:$v"
+}
+println(r)
+
+// for over indexed array
+var s = ""
+for idx, word in ["foo", "bar", "baz"] {
+    s = s + "$idx:$word "
+}
+println(s)

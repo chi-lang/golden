@@ -1,0 +1,23 @@
+type Name = string
+type Age = int
+type Person = { name: Name, age: Age }
+
+fn greet(p: Person): string {
+    "Hello, ${p.name}! You are ${p.age} years old."
+}
+
+val alice: Person = { name: "Alice", age: 30 }
+val bob: Person = { name: "Bob", age: 25 }
+
+println(greet(alice))
+println(greet(bob))
+
+// type alias for function type
+type Transformer = (int) -> int
+
+fn applyTwice(f: Transformer, x: int): int {
+    f(f(x))
+}
+
+val double: Transformer = { x -> x * 2 }
+println(applyTwice(double, 3))

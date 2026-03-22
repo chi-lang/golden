@@ -1,0 +1,18 @@
+package user/mymod
+
+pub fn add(a: int, b: int): int { a + b }
+pub fn multiply(a: int, b: int): int { a * b }
+
+// private helper - not accessible from outside
+fn square(n: int): int { n * n }
+
+pub fn sumOfSquares(a: int, b: int): int {
+    square(a) + square(b)
+}
+
+pub val pi: float = 3.14159
+
+println(add(3, 4))
+println(multiply(5, 6))
+println(sumOfSquares(3, 4))
+println(pi)

@@ -1,0 +1,31 @@
+import std/lang.map { emptyMap, put, get, size, forEach, keys, values, mapValues }
+import std/lang.array { sort }
+
+val m = emptyMap[int, int]()
+m.put(1, 100)
+m.put(2, 200)
+m.put(3, 300)
+
+println(size(m))
+
+// keys() returns all keys
+val ks = keys(m)
+sort(ks)
+for k in ks {
+    println(k)
+}
+
+// values() returns all values
+val vs = values(m)
+sort(vs)
+for v in vs {
+    println(v)
+}
+
+// mapValues - transform all values
+val doubled = mapValues(m) { k, v -> v * 2 }
+val dvs = values(doubled)
+sort(dvs)
+for v in dvs {
+    println(v)
+}

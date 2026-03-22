@@ -1,0 +1,17 @@
+// Mutual recursion using var pattern (required by Chi - see quirks.md Q2)
+var isEven: (int) -> bool = { n -> false }
+var isOdd: (int) -> bool = { n -> false }
+
+isEven = { n: int ->
+    if n == 0 { true } else { isOdd(n - 1) }
+}
+isOdd = { n: int ->
+    if n == 0 { false } else { isEven(n - 1) }
+}
+
+println(isEven(0))
+println(isEven(4))
+println(isEven(7))
+println(isOdd(1))
+println(isOdd(6))
+println(isOdd(9))

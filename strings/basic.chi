@@ -1,0 +1,7 @@
+val s = "Hello, World!"
+println(s)
+val empty = ""
+println(empty)
+println("plain string")
+println("it's fine")
+println("123")

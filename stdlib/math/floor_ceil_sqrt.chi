@@ -1,0 +1,17 @@
+import std/math { floor, ceil, sqrt }
+
+println(floor(3.7))
+println(floor(3.0))
+println(floor(0.1))
+
+println(ceil(3.2))
+println(ceil(3.0))
+println(ceil(0.9))
+
+println(sqrt(16.0))
+println(sqrt(25.0))
+println(sqrt(100.0))
+
+val root2 = sqrt(2.0)
+println(root2 > 1.4)
+println(root2 < 1.5)

@@ -1,0 +1,11 @@
+val arr = [10, 20, 30]
+for i, v in arr {
+    println(i)
+    println(v)
+}
+
+val words = ["alpha", "beta", "gamma"]
+for idx, word in words {
+    println(idx)
+    println(word)
+}

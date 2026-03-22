@@ -1,0 +1,23 @@
+fn apply(f: (int) -> int, x: int): int {
+    f(x)
+}
+
+fn compose(f: (int) -> int, g: (int) -> int): (int) -> int {
+    { x: int -> f(g(x)) }
+}
+
+fn twice(f: (int) -> int): (int) -> int {
+    { x: int -> f(f(x)) }
+}
+
+val double = { x: int -> x * 2 }
+val inc = { x: int -> x + 1 }
+
+println(apply(double, 5))
+println(apply(inc, 5))
+
+val doubleInc = compose(double, inc)
+println(doubleInc(3))
+
+val quad = twice(double)
+println(quad(3))

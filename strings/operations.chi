@@ -1,0 +1,31 @@
+import std/lang.string { len, toLower, toUpper, find, substring, replace, replaceAll,
+                          startsWith, endsWith, contains, isEmpty, trim, trimStart, trimEnd,
+                          removePrefix, toInt, reverse }
+
+val s = "Hello, World!"
+println(s.len())
+println(s.toLower())
+println(s.toUpper())
+println(s.substring(1, 5))
+println(s.find("World").valueOr(-1))
+println(s.replace("World", "Chi"))
+println(s.replaceAll("l", "L"))
+println(s.startsWith("Hello"))
+println(s.endsWith("!"))
+println(s.contains("World"))
+println(s.contains("xyz"))
+
+val padded = "  hello  "
+println(padded.trim())
+println(padded.trimStart())
+println(padded.trimEnd())
+
+println("".isEmpty())
+println("x".isEmpty())
+
+println("prefix_value".removePrefix("prefix_"))
+println("other_value".removePrefix("prefix_"))
+
+println("42".toInt())
+
+println("abcde".reverse())

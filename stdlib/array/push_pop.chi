@@ -1,0 +1,23 @@
+import std/lang.array { push, pop, addLast, removeLast, intersperse }
+
+val stack = []
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+println(stack[1])
+println(stack[2])
+println(stack[3])
+
+val top = stack.pop()
+println(top)
+println(stack[1])
+println(stack[2])
+
+// intersperse
+val nums = [1, 2, 3, 4]
+val spaced = nums.intersperse(0)
+println(spaced[1])
+println(spaced[2])
+println(spaced[3])
+println(spaced[7])

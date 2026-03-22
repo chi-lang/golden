@@ -1,0 +1,15 @@
+package user/effects
+
+pub effect ask(prompt: string): string
+
+pub fn program(): string {
+    handle {
+        val a = ask("first")
+        val b = ask("second")
+        "$a and $b"
+    } with {
+        ask(prompt) -> resume("answer")
+    }
+}
+
+println(program())

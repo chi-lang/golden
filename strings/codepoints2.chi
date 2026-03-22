@@ -1,0 +1,13 @@
+import std/lang.string { forEachCodePoint, allCodePoints, anyCodePoint, isDigit, isWhitespace }
+
+forEachCodePoint("abc") { cp -> println(cp) }
+
+println(allCodePoints("123") { cp -> cp.isDigit() })
+println(allCodePoints("12x") { cp -> cp.isDigit() })
+println(allCodePoints("") { cp -> cp.isDigit() })
+
+println(anyCodePoint("ab1") { cp -> cp.isDigit() })
+println(anyCodePoint("abc") { cp -> cp.isDigit() })
+println(anyCodePoint("") { cp -> cp.isDigit() })
+
+forEachCodePoint("a b") { cp -> println(cp.isWhitespace()) }

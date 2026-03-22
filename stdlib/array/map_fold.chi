@@ -1,0 +1,24 @@
+import std/lang.array { map, fold, reduce, sum, forEach, joinToString, joinToStringWithSeparator }
+
+val nums = [1, 2, 3, 4, 5]
+
+val doubled = nums.map { x -> x * 2 }
+println(doubled[1])
+println(doubled[5])
+
+val total = nums.fold(0) { acc, x -> acc + x }
+println(total)
+
+val product = nums.reduce { a, b -> a * b }
+println(product)
+
+println(nums.sum())
+
+var output = ""
+nums.forEach { x -> output = output + "$x " }
+println(output)
+
+val words = ["hello", "world", "chi"]
+println(words.joinToString())
+println(words.joinToStringWithSeparator(", "))
+println(words.joinToStringWithSeparator(" - "))

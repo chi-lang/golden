@@ -1,0 +1,28 @@
+package user/nested_effects
+
+pub effect ask(prompt: string): string
+pub effect log(msg: string): unit
+
+fn program(): string {
+    handle {
+        log("outer start")
+        val result = handle {
+            log("inner start")
+            val a = ask("first")
+            val b = ask("second")
+            log("inner end")
+            "$a+$b"
+        } with {
+            ask(p) -> resume("inner_${p}")
+        }
+        log("outer end")
+        result
+    } with {
+        log(msg) -> {
+            println("LOG: $msg")
+            resume(unit)
+        }
+    }
+}
+
+println(program())

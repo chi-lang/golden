@@ -1,0 +1,36 @@
+// break in for loop
+var found = -1
+for n in [10, 20, 30, 40, 50] {
+    if n == 30 {
+        found = n
+        break
+    }
+}
+println(found)
+
+// break in while loop
+var x = 0
+while true {
+    x = x + 1
+    if x >= 5 {
+        break
+    }
+}
+println(x)
+
+// break with early exit pattern
+fn firstNegative(arr: array[int]): int {
+    var result = -1
+    var done = false
+    for item in arr {
+        if item < 0 && !done {
+            result = item
+            done = true
+            break
+        }
+    }
+    result
+}
+
+println(firstNegative([1, 2, -3, 4, -5]))
+println(firstNegative([1, 2, 3]))

@@ -1,0 +1,9 @@
+println("hello" == "hello")
+println("hello" == "world")
+println("hello" != "world")
+println("hello" != "hello")
+val s = "test"
+println(s == "test")
+println(s == "other")
+println("" == "")
+println("a" == "A")

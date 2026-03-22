@@ -1,0 +1,27 @@
+fn swap[A, B](a: A, b: B): { first: B, second: A } {
+    { first: b, second: a }
+}
+
+// Each call uses a unique combination of types
+val p1 = swap(1, "one")
+println(p1.first)
+println(p1.second)
+
+fn mapPair[T](pair: { first: T, second: T }, f: (T) -> T): { first: T, second: T } {
+    { first: f(pair.first), second: f(pair.second) }
+}
+
+val doubled = mapPair({ first: 3, second: 7 }) { x -> x * 2 }
+println(doubled.first)
+println(doubled.second)
+
+fn firstOrDefault[T](arr: array[T], default: T): T {
+    if arr[1] != unit {
+        arr[1]
+    } else {
+        default
+    }
+}
+
+println(firstOrDefault([10, 20, 30], 0))
+println(firstOrDefault([], 99))

@@ -1,0 +1,26 @@
+val arr = [1, 2, 3, 4, 5]
+println(arr[1])
+println(arr[3])
+println(arr[5])
+
+arr[1] = 99
+println(arr[1])
+
+// iteration
+var sum = 0
+for x in arr {
+    sum = sum + x
+}
+println(sum)
+
+// indexed iteration
+var result = ""
+for idx, x in ["a", "b", "c"] {
+    result = result + "$idx:$x "
+}
+println(result)
+
+// nested array
+val matrix = [[1, 2], [3, 4]]
+println(matrix[1][2])
+println(matrix[2][1])

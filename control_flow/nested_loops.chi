@@ -1,0 +1,22 @@
+// nested loops with break
+var found_i = -1
+var found_j = -1
+var i = 0
+while i < 5 {
+    i = i + 1
+    var j = 0
+    while j < 5 {
+        j = j + 1
+        if i * j == 12 {
+            found_i = i
+            found_j = j
+            break
+        }
+    }
+    if found_i >= 0 {
+        break
+    }
+}
+println(found_i)
+println(found_j)
+println(found_i * found_j)
