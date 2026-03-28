@@ -31,7 +31,7 @@ ifeq ($(_CHI_FILES),)
   endif
 endif
 
-.PHONY: test update test-dual test-runtime help
+.PHONY: test update test-dual test-standalone test-runtime help
 
 ##@ Default target
 test: _check_chi _run_tests  ## Run golden tests
@@ -111,11 +111,12 @@ help:  ## Show this help
 	@echo "Usage: make [target] [CHI=/path/to/chi] [FILTER=pattern]"
 	@echo ""
 	@echo "Targets:"
-	@echo "  test          Run golden tests (default)"
-	@echo "  update        Regenerate .expected files"
-	@echo "  test-dual     Run dual execution tests (chi + standalone luajit)"
-	@echo "  test-runtime  Run pure Lua unit tests for chi_runtime.lua"
-	@echo "  help          Show this help"
+	@echo "  test             Run golden tests (default)"
+	@echo "  update           Regenerate .expected files"
+	@echo "  test-dual        Run dual execution tests (chi + standalone luajit)"
+	@echo "  test-standalone  Run golden tests in standalone mode (luajit only)"
+	@echo "  test-runtime     Run pure Lua unit tests for chi_runtime.lua"
+	@echo "  help             Show this help"
 	@echo ""
 	@echo "Variables:"
 	@echo "  CHI      Path to chi executable (default: chi from PATH)"
@@ -130,6 +131,9 @@ help:  ## Show this help
 
 test-dual: _check_chi  ## Run dual execution tests (chi vs standalone luajit)
 	@"$(GOLDEN_DIR)test_dual.sh"
+
+test-standalone: _check_chi  ## Run golden tests in standalone mode (luajit only)
+	@"$(GOLDEN_DIR)test_standalone.sh"
 
 test-runtime:  ## Run pure Lua unit tests for chi_runtime.lua
 	@luajit "$(GOLDEN_DIR)test_runtime.lua"
