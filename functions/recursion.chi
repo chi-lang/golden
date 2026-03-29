@@ -1,6 +1,5 @@
-// Recursion via var pattern (Chi doesn't support direct fn self-call)
-var factorial: (int) -> int = { n -> n }
-factorial = { n: int ->
+// Direct recursive fn (no var workaround needed)
+fn factorial(n: int): int {
     if n <= 1 {
         1
     } else {
@@ -8,8 +7,7 @@ factorial = { n: int ->
     }
 }
 
-var fib: (int) -> int = { n -> n }
-fib = { n: int ->
+fn fib(n: int): int {
     if n <= 1 {
         n
     } else {

@@ -1,4 +1,5 @@
-// Mutual recursion using var pattern (required by Chi - see quirks.md Q2)
+// Mutual recursion using var pattern
+// (direct fn mutual recursion requires forward-declaration, which is not yet supported)
 var isEven: (int) -> bool = { n -> false }
 var isOdd: (int) -> bool = { n -> false }
 
