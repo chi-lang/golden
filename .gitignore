@@ -1,1 +1,3 @@
 .worktrees
+*.lua
+!test_runtime.lua
