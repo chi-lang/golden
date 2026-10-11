@@ -1,6 +1,5 @@
-// Return from if without else, no return type annotation.
-// The inferred function return type is (string | unit) due to the if without else.
-// `return "stranger"` has type `string`, which should be compatible.
+// Named functions without a return type annotation return unit.
+// Return values and the trailing expression are evaluated, then discarded.
 fn greet(name: string) {
     if name == "" {
         return "stranger"
@@ -11,7 +10,7 @@ fn greet(name: string) {
 println(greet(""))
 println(greet("world"))
 
-// Return int from function without return type annotation.
+// The return value and trailing expression are discarded here too.
 fn abs(n: int) {
     if n < 0 {
         return -n
